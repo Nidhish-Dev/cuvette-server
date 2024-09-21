@@ -18,6 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
 // routes
+
+app.get("/", (req,res)=>{
+ res.send("Hello From Server");
+})
+
 app.use('/api', authRoutes);
 app.use('/jobs', fullTimeJobsRoute);
 app.listen(PORT, () => {
